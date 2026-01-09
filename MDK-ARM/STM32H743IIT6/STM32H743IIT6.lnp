@@ -64,6 +64,7 @@
 "stm32h743iit6\port.o"
 "stm32h743iit6\lcd.o"
 "stm32h743iit6\w9825g6kh.o"
+"stm32h743iit6\task_default.o"
 --strict --scatter "STM32H743IIT6\STM32H743IIT6.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

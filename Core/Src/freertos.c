@@ -25,8 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "lcd.h"
-#include "w9825g6kh.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,7 +45,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-W9825G6KH_Instance *w9825g6kh;
+
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -112,23 +111,14 @@ void MX_FREERTOS_Init(void) {
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
+__weak void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
-  w9825g6kh = W9825G6KH_Register();
-  W9825G6KH_Init(w9825g6kh);
-  
-  LCD_Init();
-  osDelay(1000);
+
   /* Infinite loop */
   for(;;)
   {
-    LCD_SetBackColor(LCD_RED);
-    osDelay(1000);
-    LCD_SetBackColor(LCD_GREEN);
-    osDelay(1000);
-    LCD_SetBackColor(LCD_BLUE);
-    osDelay(1000);
+    osDelay(1);
   }
   /* USER CODE END StartDefaultTask */
 }
